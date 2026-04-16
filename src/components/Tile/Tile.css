@@ -1,0 +1,26 @@
+.tile-wrapper img,
+.tile-wrapper video {
+  width: 25vw;
+  height: auto;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.tile-wrapper img:hover,
+.tile-wrapper video:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 1200px) {
+  .tile-wrapper img,
+  .tile-wrapper video {
+    width: 35vw;
+  }
+}
+
+@media (max-width: 440px) {
+  .tile-wrapper img,
+  .tile-wrapper video {
+    width: 70vw;
+  }
+}

@@ -1,0 +1,88 @@
+.music-wrapper {
+  padding: 5% 10%;
+  background-color: #efefef;
+  min-height: 100dvh;
+  color: black;
+}
+
+.music-wrapper h2 {
+  color: black;
+}
+
+.music-wrapper .back-arrow {
+  color: black;
+}
+
+.music-wrapper figure {
+  margin: 0 0 0.5rem 0;
+}
+
+.music-wrapper figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+.music-wrapper figcaption {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.music-wrapper .table-item {
+  display: flex;
+  margin-bottom: 0.1rem;
+}
+
+.music-wrapper .table-item p {
+  margin: 0;
+}
+
+.music-wrapper .table-item p:first-child {
+  width: 20%;
+  min-width: 100px;
+}
+
+.music-wrapper .table-item p:last-child {
+  width: 80%;
+  text-align: justify;
+}
+
+.music-wrapper .table-item a {
+  color: black;
+}
+
+.video-wrapper {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+  min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .music-wrapper {
+    padding: 5% 5%;
+  }
+
+  .music-wrapper .table-item {
+    flex-direction: column;
+  }
+
+  .music-wrapper .table-item p:first-child {
+    width: 100%;
+    min-width: unset;
+    font-weight: bold;
+  }
+
+  .music-wrapper .table-item p:last-child {
+    width: 100%;
+  }
+
+  .video-wrapper iframe {
+    min-height: 200px;
+  }
+}
