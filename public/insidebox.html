@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inside Box</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+
+      .insidebox-wrapper {
+        min-height: 100vh;
+        background-color: #efefef;
+      }
+
+      .insidebox {
+        padding: 5% 15%;
+      }
+
+      .insidebox video {
+        width: 100%;
+        max-width: 800px;
+        display: block;
+        margin: 0 auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+      }
+
+      .insidebox p {
+        margin: 0;
+        padding-top: 1rem;
+      }
+
+      @media (max-width: 768px) {
+        .insidebox-wrapper {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+        }
+
+        .insidebox {
+          width: 100%;
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .insidebox video {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        .insidebox p {
+          width: 100%;
+          text-align: left;
+          padding-top: 0.75rem;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .insidebox {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+          box-sizing: border-box;
+        }
+
+        .insidebox video {
+          aspect-ratio: auto;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="insidebox-wrapper">
+      <div class="insidebox">
+        <video autoplay loop muted playsinline>
+          <source src="/insideBox_snippet.mp4" type="video/mp4" />
+        </video>
+        <p>Inside Box</p>
+      </div>
+    </div>
+  </body>
+</html>
