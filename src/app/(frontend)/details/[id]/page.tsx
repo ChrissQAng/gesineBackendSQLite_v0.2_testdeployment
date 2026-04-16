@@ -1,12 +1,15 @@
 import { getPayload } from 'payload'
 import React from 'react'
 import Image from 'next/image'
+import { notFound } from 'next/navigation'
 
 import config from '@/payload.config'
 import BackArrow from '@/components/BackArrow/BackArrow'
 import DetailHero from '@/components/DetailHero/DetailHero'
 import type { Media } from '@/payload-types'
 import './details.css'
+
+export const dynamic = 'force-dynamic'
 
 interface LexicalTextNode {
   text?: string
@@ -29,16 +32,26 @@ export default async function DetailsPage({ params }: PageProps) {
   const payload = await getPayload({ config: payloadConfig })
 
   // Fetch the specific art object
-  const artObject = await payload.findByID({
-    collection: 'artObjects',
-    id: id,
-  })
+  let artObject
+  try {
+    artObject = await payload.findByID({
+      collection: 'artObjects',
+      id: id,
+    })
+  } catch {
+    // Item was deleted or doesn't exist
+    notFound()
+  }
+
+  if (!artObject) {
+    notFound()
+  }
 
   return (
     <div className="detail-wrapper">
       <BackArrow />
       <div className="detail">
-        {artObject && artObject.images && artObject.images.length > 0 ? (
+        {artObject.images && artObject.images.length > 0 ? (
           <>
             <DetailHero
               description={

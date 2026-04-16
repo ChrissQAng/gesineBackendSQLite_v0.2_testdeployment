@@ -5,6 +5,9 @@ export const ArtObjects: CollectionConfig = {
   orderable: true,
   access: {
     read: () => true,
+    create: ({ req }) => !!req.user,
+    update: ({ req }) => !!req.user,
+    delete: ({ req }) => !!req.user,
   },
   fields: [
     {

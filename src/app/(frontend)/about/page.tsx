@@ -5,6 +5,8 @@ import config from '@/payload.config'
 import BackArrow from '@/components/BackArrow/BackArrow'
 import './about.css'
 
+export const dynamic = 'force-dynamic'
+
 interface LexicalNode {
   type: string
   text?: string

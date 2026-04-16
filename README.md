@@ -315,4 +315,3 @@ Die SQLite-Datei und der `media`-Ordner bleiben dabei unangetastet.
 | 500 auf `/api/...`, `pm2 logs` zeigt `Cannot find module 'libsql'` | `.npmrc` fehlt oder wurde ignoriert. Inhalt siehe Schritt 5. Danach `rm -rf node_modules .next && pnpm install && pnpm build && pm2 restart gesine` |
 | Kacheln auf `/works` zeigen keine Bilder (400 im Browser, 404 auf `/api/media/file/...`) | Meist eine der drei Ursachen: (a) `media/`-Ordner wurde nicht auf den Server übertragen → Schritt 3 nachholen; (b) nach Code-Änderung wurde nicht neu gebaut → `pnpm build && pm2 restart gesine`; (c) Browser-Cache hält altes Ergebnis → mit `Ctrl+Shift+R` bzw. `Cmd+Shift+R` hart neu laden |
 | Nach `git pull` laufen Seiten oder Admin-Panel fehlerhaft | Build-Cache veraltet — `rm -rf .next && pnpm build && pm2 restart gesine` |
-# gesineBackendSQLite_v0.2_testdeployment

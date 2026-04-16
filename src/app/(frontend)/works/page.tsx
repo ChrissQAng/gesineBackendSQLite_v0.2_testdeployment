@@ -9,6 +9,8 @@ import Tile from '@/components/Tile/Tile'
 import type { ArtObject } from '@/payload-types'
 import './works.css'
 
+export const dynamic = 'force-dynamic'
+
 export default async function WorksPage() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
